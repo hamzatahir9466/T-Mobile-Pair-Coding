@@ -23,26 +23,40 @@ public class postFixCalculator {
 		Expression = expression;
 	}
 	
-	public void process()
+	public float process()
 	{
 		
+		float attribute1=(float) 0.0;
+		float attribute2=(float) 0.0;
+		float result=(float) 0.0;
+		String operator="";
 		String [] arrayExpression=Expression.split(" ");
 		for(int i=0;i<arrayExpression.length;i++)
 		{
-			//System.out.println(arrayExpression[i]);
-			
+			terms.push(arrayExpression[i]);
+		
 		}
-	 /*	for(int i=0;i<Expression.length();i++)
-	 	{
-	 		System.out.println(Expression.charAt(i));
-	 		terms.push(Expression.charAt(i));
-	 	}
-	 	
-	 	
-	 	for(int i=0;i<terms.size();i++)
-	 	{
-	 		System.out.println(terms.pop());
-	 	}*/
+		if(!terms.isEmpty())
+		{
+			operator= (String) terms.pop();
+		}
+		if(!terms.isEmpty())
+		{
+			attribute2= Float.valueOf((String) terms.pop()).floatValue();
+		}
+		if(!terms.isEmpty())
+		{
+			attribute1=Float.valueOf((String) terms.pop()).floatValue();
+		}
+		
+		if(operator.equals("+"))
+		{
+			result= attribute1+attribute2;
+		}
+		
+		return result;
+		
+	
 	}
 	
 	

@@ -7,7 +7,7 @@ public class main {
 		
 		postFixCalculator expTerm= new  postFixCalculator();
 		String input="";
-		
+		Float result=(float) 0.0;
 
 		 System.out.println("please enter the post fix input string");
 		 Scanner myObj = new Scanner(System.in);
@@ -16,7 +16,8 @@ public class main {
 		 expTerm.setExpression(input);
 		 
 		 System.out.println("Next we are calling process function");
-		 expTerm.process();
+		 result= expTerm.process();
+		 System.out.println("Here is the result "+result);
        
 	}
 
