@@ -15,7 +15,8 @@ public class main {
 		 System.out.println("Here is what you entered "+ input);
 		 expTerm.setExpression(input);
 		 
-		 
+		 System.out.println("Next we are calling process function");
+		 expTerm.process();
        
 	}
 
